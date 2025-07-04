@@ -1,0 +1,67 @@
+{
+  "name": "my-coding-extension",
+  "displayName": "My Coding Extension",
+  "description": "A VS Code extension integrating Groq, RAG, and LangChain.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:my-coding-extension.helloWorld",
+    "onCommand:my-coding-extension.askAI",
+    "onCommand:my-coding-extension.triggerCompletion"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "my-coding-extension.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "my-coding-extension.askAI",
+        "title": "Ask AI"
+      },
+      {
+        "command": "my-coding-extension.triggerCompletion",
+        "title": "Trigger AI Completion"
+      },
+      {
+        "command": "my-coding-extension.pasteSnippet",
+        "title": "Paste Code Snippet"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "my-coding-extension.triggerCompletion",
+        "key": "ctrl+shift+space",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/test-electron": "^2.5.2",
+    "glob": "^11.0.3",
+    "mocha": "^11.7.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@qdrant/js-client-rest": "^1.14.1",
+    "axios": "^1.6.8",
+    "langchain": "^0.0.164"
+  },
+  "type": "module"
+}
