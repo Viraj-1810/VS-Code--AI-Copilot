@@ -75,5 +75,4 @@ npm install
 
 ---
 
-## License
-[MIT](LICENSE) (or your preferred license)
+
